@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\Asset;
+use Pimcore\Model\Asset\Image; 
 use \Pimcore\Model\DataObject;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,7 @@ class DefaultController extends FrontendController
      */
     public function defaultAction(Request $request)
     {
-
+        return [];
     }
 
 //adding an asset in pimcore folder
@@ -30,11 +31,22 @@ class DefaultController extends FrontendController
     public function assetAdd()
     {
         $asset = new Asset();
-        $asset->setParentId(2);
+        $asset->setParentId(3);
         $asset->setFilename("audirs6_imported.jpg");
-        $asset->setData(file_get_contents("https://i.pinimg.com/originals/cc/89/52/cc8952ed3f57e6f72b4e843035489021.jpg"));
+        $asset->setData(file_get_contents("https://img.chceauto.pl/audi/a6/audi-a6-kombi-4472-49497_v2.webp"));
         $asset->save();
 
         return new Response("done");
+    }
+
+//image thumbnail testing
+    /**
+     * @Route ("thumbnail")
+     */
+    public function thumbnailAction(Request $request)
+    {
+        $asset = Asset::getById(6);
+        echo $asset->getThumbnail('cars')->getHtml(); die;
+        return $this->render('default/default.html.twig');
     }
 }
