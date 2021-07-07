@@ -49,4 +49,11 @@ class DefaultController extends FrontendController
         echo $asset->getThumbnail('cars')->getHtml(); die;
         return $this->render('default/default.html.twig');
     }
+
+//now u can add a document with this controller action in pimcore
+    public function carsAction(Request $request)
+    {
+        //do some stuff here
+        return $this->render('default/cars.html.twig');
+    }
 }
