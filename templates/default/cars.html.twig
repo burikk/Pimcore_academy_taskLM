@@ -6,10 +6,15 @@
     {% for i in pimcore_block('contentblock').iterator %}
         <p>{{ pimcore_wysiwyg('content') }}</p>
         <p>Now it extends from layout</p>
-
-        {{ pimcore_image('image', {
-            'thumbnail': 'cars'
-        }) }}
+        {% if editmode %}
+            {{ pimcore_image('image', {
+                'thumbnail': 'cars'
+            }) }}
+        {% else %}
+            {% if not pimcore_image('image').isEmpty() %}
+                <img src="{{ pimcore_image('image').getThumbnail('cars') }}" />
+            {% endif %}
+        {% endif %}
     {% endfor %}
 
 {% endblock %}
