@@ -2,8 +2,12 @@
 
 {% block content %}
 
-    <h1>Cars</h1>
-    <p>Looking for a new car?</p>
+    <h1>{{ pimcore_input('headline') }}</h1>
+    <p>{{ pimcore_wysiwyg('content') }}</p>
     <p>Now it extends from layout</p>
+
+    {{ pimcore_image('image', {
+        'thumbnail': 'cars'
+    }) }}
 
 {% endblock %}

@@ -6,8 +6,8 @@ return [
             [
                 "method" => "resize",
                 "arguments" => [
-                    "width" => 640,
-                    "height" => 320
+                    "width" => 400,
+                    "height" => 200
                 ]
             ]
         ],
@@ -24,7 +24,7 @@ return [
         "preserveMetaData" => FALSE,
         "rasterizeSVG" => FALSE,
         "downloadable" => FALSE,
-        "modificationDate" => 1625586349,
+        "modificationDate" => 1625662208,
         "creationDate" => 1625586252,
         "preserveAnimation" => FALSE,
         "id" => "cars"
