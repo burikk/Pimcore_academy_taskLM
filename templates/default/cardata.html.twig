@@ -1,6 +1,24 @@
 {% extends "layouts/layout.html.twig" %}
 
 {% block content %}
-
+    <div class="main-content">
+        <div class="row">
+            {% for car in cars %}
+                <div class="col-md-4 d-flex align-items-strech flex-column">
+                    <div class="card custom-product-card mb-4 shadow-sm flex-fill">
+                        <div class="card-body">
+                            <div class="card-body-top pb-3">
+                                <h4 class="card-title pricing-card-title text-uppercase">{{ car.name }}</h4>
+                                <p class="card-text">{{ car.description }}</p>
+                            </div>
+                            <div class="card-body-bottom">
+                                <p class="card-price">EUR {{ car.price | number_format(2) }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
     
 {% endblock %}

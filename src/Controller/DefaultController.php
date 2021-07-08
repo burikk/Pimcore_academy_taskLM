@@ -72,9 +72,11 @@ class DefaultController extends FrontendController
             $data[] = [
                 'id' => $car->getId(),
                 'name' => $car->getName(),
-                'price' => $car->getPrice()
+                'price' => $car->getPrice(),
+                'description' => $car->getDescription(),
             ];
         }
-        return new JsonResponse($data);
+        //return new JsonResponse($data);
+        return $this->render('default/cardata.html.twig', ['cars' => $cars]);
     }
 }
