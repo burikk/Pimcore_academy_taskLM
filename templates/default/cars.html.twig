@@ -3,9 +3,9 @@
 {% block content %}
 
     <h1>{{ pimcore_input('headline') }}</h1>
+    <p>Now it extends from layout</p>
     {% for i in pimcore_block('contentblock').iterator %}
         <p>{{ pimcore_wysiwyg('content') }}</p>
-        <p>Now it extends from layout</p>
         {% if editmode %}
             {{ pimcore_image('image', {
                 'thumbnail': 'cars'
