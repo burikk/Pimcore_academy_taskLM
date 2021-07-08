@@ -74,6 +74,7 @@ class DefaultController extends FrontendController
                 'name' => $car->getName(),
                 'price' => $car->getPrice(),
                 'description' => $car->getDescription(),
+                'gallery' => $car->getGallery(),
             ];
         }
         //return new JsonResponse($data);

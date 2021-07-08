@@ -7,7 +7,7 @@
 
 Fields Summary: 
 - name [input]
-- description [wysiwyg]
+- description [textarea]
 - price [numeric]
 - carCategory [manyToManyObjectRelation]
 - gallery [imageGallery]
@@ -19,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Cars',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1625729801,
+   'modificationDate' => 1625738720,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -120,19 +120,20 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValueGenerator' => '',
               )),
               1 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
-                 'fieldtype' => 'wysiwyg',
+              Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                 'fieldtype' => 'textarea',
                  'width' => '',
                  'height' => '',
-                 'toolbarConfig' => '',
+                 'maxLength' => NULL,
+                 'showCharCount' => false,
                  'excludeFromSearchIndex' => false,
                  'name' => 'description',
-                 'title' => 'description',
+                 'title' => 'Description',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => false,
+                 'locked' => NULL,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
@@ -229,7 +230,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
+                 'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
@@ -282,7 +283,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
+                 'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
