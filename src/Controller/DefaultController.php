@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use Pimcore\Bundle\AdminBundle\HttpFoundation\JsonResponse;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\Asset;
 use Pimcore\Model\Asset\Image; 
 use \Pimcore\Model\DataObject;
+use Pimcore\Model\DataObject\CarCategory;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -47,7 +49,7 @@ class DefaultController extends FrontendController
     {
         $asset = Asset::getById(6);
         echo $asset->getThumbnail('cars')->getHtml(); die;
-        return $this->render('default/default.html.twig');
+        return $this->render('default/thumbnail.html.twig');
     }
 
 //now u can add a document with this controller action in pimcore
@@ -55,5 +57,24 @@ class DefaultController extends FrontendController
     {
         //do some stuff here
         return $this->render('default/cars.html.twig');
+    }
+
+    /**
+     * @Route("cardata")
+     * @return Response
+     */
+    public function carDataAction(Request $request)
+    {
+        $cars = new DataObject\Cars\Listing();
+        $data = [];
+
+        foreach ($cars as $car) {
+            $data[] = [
+                'id' => $car->getId(),
+                'name' => $car->getName(),
+                'price' => $car->getPrice()
+            ];
+        }
+        return new JsonResponse($data);
     }
 }
