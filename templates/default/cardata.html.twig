@@ -9,7 +9,7 @@
                         <div class="card-body">
                             <div class="card-body-top pb-3">
                                 <h4 class="card-title pricing-card-title text-uppercase">{{ car.name }}</h4>
-                                <p class="card-text">{{ car.description }}</p>
+                                <p class="card-text">{{ car.description | striptags }}</p>
                             </div>
                             <div class="card-body-bottom">
                                 <p class="card-price">EUR {{ car.price | number_format(2) }}</p>

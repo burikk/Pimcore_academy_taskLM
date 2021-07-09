@@ -7,7 +7,7 @@
 
 Fields Summary: 
 - name [input]
-- description [textarea]
+- description [wysiwyg]
 - price [numeric]
 - carCategory [manyToManyObjectRelation]
 - gallery [imageGallery]
@@ -19,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Cars',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1625738720,
+   'modificationDate' => 1625748083,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -120,12 +120,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValueGenerator' => '',
               )),
               1 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-                 'fieldtype' => 'textarea',
+              Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
+                 'fieldtype' => 'wysiwyg',
                  'width' => '',
                  'height' => '',
-                 'maxLength' => NULL,
-                 'showCharCount' => false,
+                 'toolbarConfig' => '',
                  'excludeFromSearchIndex' => false,
                  'name' => 'description',
                  'title' => 'Description',
@@ -133,7 +132,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
-                 'locked' => NULL,
+                 'locked' => false,
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',

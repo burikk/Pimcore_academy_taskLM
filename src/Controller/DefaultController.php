@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Workflow\Event\Event;
 
 class DefaultController extends FrontendController
 {
@@ -59,6 +60,7 @@ class DefaultController extends FrontendController
         return $this->render('default/cars.html.twig');
     }
 
+//url with car objects
     /**
      * @Route("cardata")
      * @return Response
@@ -79,5 +81,18 @@ class DefaultController extends FrontendController
         }
         //return new JsonResponse($data);
         return $this->render('default/cardata.html.twig', ['cars' => $cars]);
+    }
+
+    /**
+     * @Route ("renderletcar")
+     */
+    public function eventAction(Request $request)
+    {
+        /* if($request->get('type') == 'object') {
+            if($cars = DataObject\Cars::getById($request->get('id'))) {
+                return $this->render('default/renderletcar.html.twig', ['cars' => $cars]);
+            }
+        } */
+        return $this->render('default/renderletcar.html.twig');
     }
 }
