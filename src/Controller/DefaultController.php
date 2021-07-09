@@ -86,19 +86,14 @@ class DefaultController extends FrontendController
         return $this->render('default/cardata.html.twig', ['cars' => $cars]);
     }
 
-    /**
-     * @Route ("areabricktest")
-     */
     public function areabrickAction(Request $request)
     {
-/*         $id = $request->get("id");
-        $type = $request->get("type");
-
-        if($type == 'object') {
-
-            $cars = Cars::getById($id);
-            return $this->render('default/areabricktest.html.twig', ['cars' => $cars]);
-        } */
-        return $this->render('default/areabricktest.html.twig');
+        if ($request->get('type') == 'object') {
+            if ($cars = Cars::getById($request->get('id'))) {
+                return $this->render('default/car.html.twig', ['cars' => $cars]);
+            }
+        } else {
+            return new Response('error');
+        }
     }
 }

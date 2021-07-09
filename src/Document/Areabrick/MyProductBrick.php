@@ -27,4 +27,9 @@ class MyProductBrick extends AbstractAreabrick
     {
         return 'My product brick';
     }
+
+    public function action(Info $info)
+    {
+        return parent::action($info);
+    }
 }
