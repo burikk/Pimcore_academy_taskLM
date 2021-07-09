@@ -5,14 +5,17 @@ namespace App\Controller;
 use Pimcore\Bundle\AdminBundle\HttpFoundation\JsonResponse;
 use Pimcore\Controller\FrontendController;
 use Pimcore\Model\Asset;
-use Pimcore\Model\Asset\Image; 
+use Pimcore\Model\Asset\Image;
+use Pimcore\Model\Asset\MetaData\ClassDefinition\Data\Data;
 use \Pimcore\Model\DataObject;
 use Pimcore\Model\DataObject\CarCategory;
+use Pimcore\Model\DataObject\Cars;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Workflow\Event\Event;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DefaultController extends FrontendController
 {
@@ -84,15 +87,18 @@ class DefaultController extends FrontendController
     }
 
     /**
-     * @Route ("renderletcar")
+     * @Route ("areabricktest")
      */
-    public function eventAction(Request $request)
+    public function areabrickAction(Request $request)
     {
-        /* if($request->get('type') == 'object') {
-            if($cars = DataObject\Cars::getById($request->get('id'))) {
-                return $this->render('default/renderletcar.html.twig', ['cars' => $cars]);
-            }
+/*         $id = $request->get("id");
+        $type = $request->get("type");
+
+        if($type == 'object') {
+
+            $cars = Cars::getById($id);
+            return $this->render('default/areabricktest.html.twig', ['cars' => $cars]);
         } */
-        return $this->render('default/renderletcar.html.twig');
+        return $this->render('default/areabricktest.html.twig');
     }
 }

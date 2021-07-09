@@ -1,0 +1,19 @@
+<section class="area-standard-teaser bg-light text-center">
+    <div class="container">
+
+        <div class="card-deck mb-3 text-center no-gutters">
+            {% for t in 0..2 %}
+                <div class="col-md-4">
+                    {{
+                        pimcore_renderlet('cars' ~ t, {
+                            'controller': 'App\\Controller\\DefaultController::productAction',
+                            'height': 400,
+                            'title': 'Drag an event object here',
+                            "editmode" : editmode
+                        })
+                    }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
