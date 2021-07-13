@@ -10,6 +10,10 @@
             <p class="card-text">
                 {{ cars.description | striptags | slice(0, 150) ~ '...' }}
             </p>
+            <div class="card-body-bottom">
+                <p class="card-price">EUR {{ cars.price | number_format(2) }}</p>
+                <button type="button" class="btn btn-dark">Buy</button>
+            </div>
         </div>
     </div>
 </div>
