@@ -1,10 +1,13 @@
 imports:
     - { resource: services.yaml }
+    - { resource: ecommerce.yaml }
     - { resource: 'local/' }
 
 
 pimcore:
-
+    models:
+        class_overrides:
+            'Pimcore\Model\DataObject\Car': 'App\Model\DataObject\MyCar'
 # IMPORTANT Notice!
 # Following there are only some examples listed, for a full list of possible options, please run the following command:
 # ./bin/console debug:config pimcore

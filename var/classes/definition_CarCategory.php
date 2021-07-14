@@ -1,8 +1,8 @@
 <?php 
 
 /** 
-* Inheritance: no
-* Variants: no
+* Inheritance: yes
+* Variants: yes
 
 
 Fields Summary: 
@@ -15,10 +15,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'CarCategory',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1625728233,
+   'modificationDate' => 1626252529,
    'userOwner' => 2,
    'userModification' => 2,
-   'parentClass' => '',
+   'parentClass' => '\\Pimcore\\Bundle\\EcommerceFrameworkBundle\\Model\\AbstractProduct',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
@@ -27,9 +27,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
-   'allowInherit' => false,
-   'allowVariants' => false,
-   'showVariants' => false,
+   'allowInherit' => true,
+   'allowVariants' => true,
+   'showVariants' => true,
    'fieldDefinitions' => 
   array (
   ),
@@ -84,7 +84,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
